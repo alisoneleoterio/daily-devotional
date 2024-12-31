@@ -136,6 +136,8 @@
             font-family: var(--font-grande);
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;/***/
+            flex: 1 1 100%; /***/
             justify-content: space-between;
             padding: 20px;
             max-width: 1200px;
@@ -154,13 +156,14 @@
             }
 
             .reference-section {
-                flex: 1;
+                flex: 1;/***/
                 background-color: var(--color-black);
                 color: var(--color-white);
                 padding: 20px;
                 box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
                 display: flex;
                 flex-direction: column;
+                border-top: 1px solid #ccc;/***/
             }
 
             .reference-section h2 {
@@ -204,6 +207,14 @@
 
                 .reference-section {
                     margin-top: 20px;
+                }
+            }
+
+            /* Para telas menores (celulares e tablets) */
+            @media (max-width: 768px) {
+                /* Os itens se empilham um abaixo do outro */
+                .reference-section{
+                    flex: 1 1 100%;
                 }
             }
         </style>
@@ -356,6 +367,17 @@
 
             .credits-column p {
                 margin: 0.2rem 0;
+            }
+
+            /*** RESPONSIVIDADE ***/
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
             }
         </style>
 
